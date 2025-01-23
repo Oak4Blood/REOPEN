@@ -2,9 +2,20 @@ import os
 import subprocess
 import time
 import requests
+import sys
 
-url = "https://www.roblox.com/games/8304191830/CHRISTMAS-RERELEASE-TOURNAMENT-AA?privateServerLinkCode=29951216318751192236903132718544"
-webhook_url = "https://discord.com/api/webhooks/1330228965591220254/0BSqasAyaIuONS20VKP2L-F5tsuklUkqPY60XUXLt5aksNrCtl-9TriHi44B5nASb8pr"
+config_path = "/sdcard/download"
+if config_path not in sys.path:
+    sys.path.append(config_path)
+
+try:
+    import config
+    url = config.url
+    webhook_url = config.webhook_url
+except ImportError as e:
+    print(f"ไม่สามารถนำเข้า config.py ได้: {e}")
+    url = None
+    webhook_url = None
 
 def is_process_running(package_name):
     """ตรวจสอบว่า process ของแอปกำลังทำงานและไม่ค้างหรือไม่"""
