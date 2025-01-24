@@ -38,8 +38,9 @@ def open_chrome_with_url(url):
     os.system(chrome_command)
 
     data = {
-        "content": "ผู้ช่วยได้เปิด Roblox ให้คุณแล้ว",
-        "username": "ผู้ช่วยส่วนตัวของคุณ"
+        "content": "เปิด Roblox ให้แล้วคะท่าน",
+        "username": "👩‍💻 Your Private Assistant",
+        "avatar_url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/caf1f59c-cbae-4e80-adf0-0717491aaad7/dga5nnp-471e7f06-245b-413c-803b-bbddb3d85090.jpg/v1/fill/w_768,h_1024,q_75,strp/sexy_secretary_b_8301f_by_incidesign_dga5nnp-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcL2NhZjFmNTljLWNiYWUtNGU4MC1hZGYwLTA3MTc0OTFhYWFkN1wvZGdhNW5ucC00NzFlN2YwNi0yNDViLTQxM2MtODAzYi1iYmRkYjNkODUwOTAuanBnIiwid2lkdGgiOiI8PTc2OCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.2k68_eMAZZ5DnzQB-kBzCLSuJWK5i6lhAqei_AwAdPE"
     }
     try:
         response = requests.post(webhook_url, json=data)
@@ -62,8 +63,9 @@ def kill_roblox_hourly(last_kill_time):
         subprocess.call(['su', '-c', 'am force-stop com.roblox.client'])
 
         data = {
-            "content": "ผู้ช่วยได้ปิด Roblox ให้คุณแล้วและกำลังจะเปิดให้ทันทีหลังจากนี้",
-            "username": "ผู้ช่วย ส่วนตัวของคุณ"
+            "content": "ดิฉันปิดและเปิด Roblox ให้คุณแล้วคะท่าน",
+            "username": "👩‍💻 Your Private Assistant",
+            "avatar_url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/caf1f59c-cbae-4e80-adf0-0717491aaad7/dga5nnp-471e7f06-245b-413c-803b-bbddb3d85090.jpg/v1/fill/w_768,h_1024,q_75,strp/sexy_secretary_b_8301f_by_incidesign_dga5nnp-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcL2NhZjFmNTljLWNiYWUtNGU4MC1hZGYwLTA3MTc0OTFhYWFkN1wvZGdhNW5ucC00NzFlN2YwNi0yNDViLTQxM2MtODAzYi1iYmRkYjNkODUwOTAuanBnIiwid2lkdGgiOiI8PTc2OCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.2k68_eMAZZ5DnzQB-kBzCLSuJWK5i6lhAqei_AwAdPE"
         }
         try:
             response = requests.post(webhook_url, json=data)
